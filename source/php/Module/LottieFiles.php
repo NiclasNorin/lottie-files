@@ -26,9 +26,17 @@ class LottieFiles extends \Modularity\Module
         }, 10, 2);
     }
 
+    public function data(): array
+    {
+        $fields = get_fields($this->ID);
+        
+
+        return $data ?? [];
+    }
+
     public function template(): string
     {
-        return "lottie-files.blade.php";
+        return 'lottie-files.blade.php';
     }
 
     /**

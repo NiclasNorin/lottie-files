@@ -22,7 +22,7 @@ define('MODULARITYLOTTIEFILES_PATH', plugin_dir_path(__FILE__));
 define('MODULARITYLOTTIEFILES_URL', plugins_url('', __FILE__));
 define('MODULARITYLOTTIEFILES_TEMPLATE_PATH', MODULARITYLOTTIEFILES_PATH . 'templates/');
 define('MODULARITYLOTTIEFILES_TEXT_DOMAIN', 'modularity-lottie-files');
-define('MODULARITYLOTTIEFILES_MODULE_VIEW_PATH', MODULARITYOPENSTREETMAP_PATH . 'source/php/Module/views');
+define('MODULARITYLOTTIEFILES_MODULE_VIEW_PATH', MODULARITYLOTTIEFILES_PATH . 'source/php/Module/views');
 
 require_once MODULARITYLOTTIEFILES_PATH . 'Public.php';
 
@@ -30,7 +30,6 @@ require_once MODULARITYLOTTIEFILES_PATH . 'Public.php';
 require __DIR__ . '/vendor/autoload.php';
 
 add_filter('/Modularity/externalViewPath', function ($arr) {
-    echo '<pre>' . print_r( $arr, true ) . '</pre>';
     $arr['mod-lottie-files'] = MODULARITYLOTTIEFILES_MODULE_VIEW_PATH;
 
     return $arr;

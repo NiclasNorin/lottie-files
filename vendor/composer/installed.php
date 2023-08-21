@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'helsingborg-stad/modularity-lottie-files',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '07d93ea6947414b182fea620b0cd348072134193',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'b97dc48b7f9064a067cfebcf7a5561186b818f0b',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'helsingborg-stad/modularity-lottie-files' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '07d93ea6947414b182fea620b0cd348072134193',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'b97dc48b7f9064a067cfebcf7a5561186b818f0b',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

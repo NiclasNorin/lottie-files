@@ -6,37 +6,30 @@ class App
 {
     public function __construct()
     {
-        add_action('admin_enqueue_scripts', array($this, 'enqueueStyles'));
+        add_action('admin_enqueue_scripts', array($this, 'enqueueFrontend'));
         add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
         add_action('plugins_loaded', array($this, 'registerModule'));
 
         $this->cacheBust = new \ModularityLottieFiles\Helper\CacheBust();
     }
 
-    /**
+     /**
      * Enqueue required style
      * @return void
      */
-    public function enqueueStyles()
+    public function enqueueFrontend()
     {
         wp_register_style(
             'modularity-lottie-files-css',
-            MODULARITYLOTTIEFILES_URL . '/dist/' .
+            MODULARITYOPENSTREETMAP_URL . '/dist/' .
             $this->cacheBust->name('css/modularity-lottie-files.css')
         );
 
         wp_enqueue_style('modularity-lottie-files-css');
-    }
 
-    /**
-     * Enqueue required scripts
-     * @return void
-     */
-    public function enqueueScripts()
-    {
         wp_register_script(
             'modularity-lottie-files-js',
-            MODULARITYLOTTIEFILES_URL . '/dist/' .
+            MODULARITYOPENSTREETMAP_URL . '/dist/' .
             $this->cacheBust->name('js/modularity-lottie-files.js')
         );
 

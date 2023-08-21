@@ -1,1 +1,1 @@
-HEJ
+<div class="hej">HEJ</div>
