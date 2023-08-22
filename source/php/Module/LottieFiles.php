@@ -29,7 +29,22 @@ class LottieFiles extends \Modularity\Module
     public function data(): array
     {
         $fields = get_fields($this->ID);
-        
+
+        $data['attributeList'] = [];
+
+        if (!empty($fields['mod_lottie_files_loop'])) {
+            $data['attributeList'][] = "loop";
+        } 
+        if (!empty($fields['mod_lottie_files_controls'])) {
+            $data['attributeList'][] = "controls";
+        } 
+        if (!empty($fields['mod_lottie_files_autoplay'])) {
+            $data['attributeList'][] = "autoplay";
+        } 
+
+        $data['lottie_embed'] = !empty($fields['mod_lottie_files_embed_url'])? $fields['mod_lottie_files_embed_url'] : false;
+
+        echo '<pre>' . print_r( $data, true ) . '</pre>';        
 
         return $data ?? [];
     }
