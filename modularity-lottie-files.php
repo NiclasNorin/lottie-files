@@ -42,7 +42,7 @@ add_action('acf/init', function () {
     $acfExportManager->setTextdomain('modularity-lottie-files');
     $acfExportManager->setExportFolder(MODULARITYLOTTIEFILES_PATH . 'source/php/AcfFields/');
     $acfExportManager->autoExport(array(
-        'modularity-lottie-files-settings' => 'group_61ea7a87e8aaa' //Update with acf id here, settings view
+        'modularity-lottie-files-settings' => 'group_64e3989e1255d' //Update with acf id here, settings view
     ));
     $acfExportManager->import();
 });

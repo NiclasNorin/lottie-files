@@ -1,1 +1,1 @@
-console.log('helsingborg-stad/modularity-lottie-files'); 
+import * as LottiePlayer from "@lottiefiles/lottie-player";

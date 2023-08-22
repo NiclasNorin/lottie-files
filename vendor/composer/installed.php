@@ -3,7 +3,7 @@
         'name' => 'helsingborg-stad/modularity-lottie-files',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b97dc48b7f9064a067cfebcf7a5561186b818f0b',
+        'reference' => '45caa46c4cc8394e424bc1ccde01c02df2d6a193',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'helsingborg-stad/modularity-lottie-files' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b97dc48b7f9064a067cfebcf7a5561186b818f0b',
+            'reference' => '45caa46c4cc8394e424bc1ccde01c02df2d6a193',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
