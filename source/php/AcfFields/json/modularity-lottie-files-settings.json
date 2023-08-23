@@ -23,11 +23,11 @@
             "label": "Width",
             "name": "mod_lottie_files_width",
             "type": "number",
-            "instructions": "",
+            "instructions": "Width of the animation in %",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -40,28 +40,30 @@
             "append": ""
         },
         {
-            "key": "field_64e3a54c2eef8",
-            "label": "Lottie files type",
-            "name": "mod_lottie_files_type",
-            "type": "radio",
+            "key": "field_64e6622ec7a78",
+            "label": "Position",
+            "name": "mod_lottie_files_position",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "embed": "Embed",
-                "upload": "Upload"
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
             },
-            "default_value": "embed",
+            "default_value": "left",
             "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_64e50d4101074",
@@ -72,15 +74,15 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 1,
+            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 0
+            "ui_off_text": ""
         },
         {
             "key": "field_64e50e8d01075",
@@ -91,15 +93,15 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 0,
+            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 0
+            "ui_off_text": ""
         },
         {
             "key": "field_64e50ee201076",
@@ -110,15 +112,32 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 1,
+            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 0
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_64e65f05be1e5",
+            "label": "Background color",
+            "name": "mod_lottie_files_background_color",
+            "type": "color_picker",
+            "instructions": "This will add a background behind the animation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgba(255,255,255,0)",
+            "enable_opacity": 1,
+            "return_format": "string"
         }
     ],
     "location": [

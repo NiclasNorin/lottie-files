@@ -30,23 +30,32 @@ class LottieFiles extends \Modularity\Module
     {
         $fields = get_fields($this->ID);
 
-        $data['attributeList'] = [];
-
+        $attributes = [];
+        
         if (!empty($fields['mod_lottie_files_loop'])) {
-            $data['attributeList'][] = "loop";
+            $attributes[] = "loop";
         } 
         if (!empty($fields['mod_lottie_files_controls'])) {
-            $data['attributeList'][] = "controls";
+            $attributes[] = "controls";
         } 
         if (!empty($fields['mod_lottie_files_autoplay'])) {
-            $data['attributeList'][] = "autoplay";
+            $attributes[] = "autoplay";
         } 
 
-        $data['lottie_embed'] = !empty($fields['mod_lottie_files_embed_url'])? $fields['mod_lottie_files_embed_url'] : false;
+        if (!empty($fields['mod_lottie_files_embed_url'])) {
+            $attributes[] = 'data-js-lottie-files-src="' . $fields['mod_lottie_files_embed_url'] . '"';
+        }
 
-        echo '<pre>' . print_r( $data, true ) . '</pre>';        
+        if (!empty($fields['mod_lottie_files_background_color'])) {
+            $attributes[] = 'background=' . $fields['mod_lottie_files_background_color'];
+        }
 
-        return $data ?? [];
+        $data['attributeList'] = !empty($attributes) ? implode(' ', $attributes) : '';
+
+        return $data;
+    }
+
+    private function buildAttributes($attributes) {
     }
 
     public function template(): string
