@@ -33,13 +33,14 @@ class LottieFiles extends \Modularity\Module
         $attributes = [];
         
         if (!empty($fields['mod_lottie_files_loop'])) {
-            $attributes[] = "loop";
+            $attributes[] = 'loop';
         } 
         if (!empty($fields['mod_lottie_files_controls'])) {
-            $attributes[] = "controls";
+            $attributes[] = 'controls';
         } 
         if (!empty($fields['mod_lottie_files_autoplay'])) {
-            $attributes[] = "autoplay";
+            $attributes[] = 'autoplay';
+            $data['isPlaying'] = 'is-playing';
         } 
 
         if (!empty($fields['mod_lottie_files_embed_url'])) {
@@ -49,6 +50,8 @@ class LottieFiles extends \Modularity\Module
         if (!empty($fields['mod_lottie_files_background_color'])) {
             $attributes[] = 'background=' . $fields['mod_lottie_files_background_color'];
         }
+
+        $data['width'] = !empty($fields['mod_lottie_files_width']) ? $fields['mod_lottie_files_width'] . 'px' : '100%';
 
         $data['attributeList'] = !empty($attributes) ? implode(' ', $attributes) : '';
 

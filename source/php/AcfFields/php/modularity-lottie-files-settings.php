@@ -26,7 +26,7 @@
             'label' => __('Width', 'modularity-lottie-files'),
             'name' => 'mod_lottie_files_width',
             'type' => 'number',
-            'instructions' => __('Width of the animation in %', 'modularity-lottie-files'),
+            'instructions' => __('Width of the animation in px (leave empty for it to be 100%)', 'modularity-lottie-files'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(

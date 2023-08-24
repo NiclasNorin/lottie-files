@@ -1,8 +1,10 @@
 
 class LottieFiles {
-    constructor(player) {
-        this.player = player;
-        player && this.setupLottieAnimation();
+    constructor(container) {
+        this.container = container;
+        this.player = container.querySelector('lottie-player');
+
+        this.player && this.setupLottieAnimation();
     }
     
     setupLottieAnimation() {
@@ -13,26 +15,47 @@ class LottieFiles {
             this.player.load(url);
         } else {
             this.removePlayer();
+            return;
         }
 
-        this.player.addEventListener('click', () => {
+        this.setupLottieListeners();
+    }
+
+    setupLottieListeners() {
+        const pauseButton = this.container.querySelector('[data-js-lottie-pause-button]');
+        const playButton = this.container.querySelector('[data-js-lottie-play-button]');
+
+        this.player.addEventListener('click', (e) => {
             this.player.togglePlay();
+            console.log(e);
+        });
+
+        this.player.addEventListener('play', () => {
+            pauseButton.classList.remove('u-display--none');
+            playButton.classList.add('u-display--none');
+        });
+
+        this.player.addEventListener('pause', (e) => {
+            pauseButton.classList.add('u-display--none');
+            playButton.classList.remove('u-display--none'); 
         });
 
         this.player.addEventListener('error', () => {
+            console.error('Error in playing this animation.')
             this.player.stop();
             this.removePlayer();
         });
     }
 
     removePlayer() {
-        this.player.remove()
+        this.container.remove()
     }
 }
 
 export function initializeLottieFiles() {
-    const lottieElements = [...document.querySelectorAll('lottie-player')];
-    lottieElements.forEach(player => {
-        new LottieFiles(player);
+    
+    const lottieContainers = [...document.querySelectorAll('[data-js-lottie-player-container]')];
+    lottieContainers.forEach(container => {
+        new LottieFiles(container);
     });
 }
