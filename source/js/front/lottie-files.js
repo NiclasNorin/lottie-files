@@ -1,10 +1,16 @@
 
 class LottieFiles {
-    constructor(container) {
-        this.container = container;
-        this.player = container.querySelector('lottie-player');
+    constructor(animation) {
+        this.container = animation.querySelector('[data-js-lottie-player-container]');
+        this.player = animation.querySelector('lottie-player');
 
-        this.player && this.setupLottieAnimation();
+        this.startAnimation();
+    }
+
+    startAnimation() {
+        if (this.container && this.player) {
+            this.setupLottieAnimation();
+        }
     }
     
     setupLottieAnimation() {
@@ -25,10 +31,18 @@ class LottieFiles {
         const pauseButton = this.container.querySelector('[data-js-lottie-pause-button]');
         const playButton = this.container.querySelector('[data-js-lottie-play-button]');
 
-        this.player.addEventListener('click', (e) => {
-            this.player.togglePlay();
-            console.log(e);
+        this.player.addEventListener('error', () => {
+            console.error('Error in playing this animation.')
+            this.player.stop();
+            this.removePlayer();
+            return;
         });
+
+        this.container.addEventListener('click', () => {
+            this.player.togglePlay();
+        });
+
+        if (this.player.hasAttribute('controls')) return;
 
         this.player.addEventListener('play', () => {
             pauseButton.classList.remove('u-display--none');
@@ -40,11 +54,10 @@ class LottieFiles {
             playButton.classList.remove('u-display--none'); 
         });
 
-        this.player.addEventListener('error', () => {
-            console.error('Error in playing this animation.')
-            this.player.stop();
-            this.removePlayer();
-        });
+        if (!this.player.hasAttribute('autoplay')) {
+            const pauseEvent = new Event('pause');
+            this.player.dispatchEvent(pauseEvent);
+        }
     }
 
     removePlayer() {
@@ -54,8 +67,8 @@ class LottieFiles {
 
 export function initializeLottieFiles() {
     
-    const lottieContainers = [...document.querySelectorAll('[data-js-lottie-player-container]')];
-    lottieContainers.forEach(container => {
-        new LottieFiles(container);
+    const lottieAnimations = [...document.querySelectorAll('[data-js-lottie-animation]')];
+    lottieAnimations.forEach(animation => {
+        new LottieFiles(animation);
     });
 }

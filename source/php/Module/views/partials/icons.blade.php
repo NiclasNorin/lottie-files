@@ -1,6 +1,6 @@
 @icon([
-    'size' => 'md',
-    'icon' => 'restaurant',
+    'size' => 'xxl',
+    'icon' => 'play_arrow',
     'attributeList' => [
         'data-js-lottie-play-button' => '',
     ],
@@ -11,8 +11,8 @@
 ]) 
 @endicon
 @icon([
-    'size' => 'md',
-    'icon' => 'circle',
+    'size' => 'xxl',
+    'icon' => 'pause',
     'attributeList' => [
         'data-js-lottie-pause-button' => '',
     ],
