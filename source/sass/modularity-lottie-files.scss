@@ -6,6 +6,14 @@ $lottie-icon-color: var(--color-primary-contrasting, #fff) !default;
     
     .lottie-container {
         position: relative;
+
+        .lottie-play-button {
+            display: block;
+        }
+
+        .lottie-pause-button {
+            display: none;
+        }
     
         .lottie-play-button, 
         .lottie-pause-button {
@@ -14,7 +22,6 @@ $lottie-icon-color: var(--color-primary-contrasting, #fff) !default;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 100;
-            display: none;
             cursor: pointer;
             color: $lottie-icon-color;
             background-color: $lottie-icon-background-color;
@@ -22,7 +29,6 @@ $lottie-icon-color: var(--color-primary-contrasting, #fff) !default;
         }
     
         &:hover {
-            .lottie-play-button, 
             .lottie-pause-button {
                 display: block;
             }

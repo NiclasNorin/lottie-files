@@ -38,11 +38,12 @@ class LottieFiles {
             return;
         });
 
-        this.container.addEventListener('click', () => {
+        if (this.player.hasAttribute('controls')) return;
+        
+        this.container.addEventListener('click', (e) => {
+            console.log(e.target);
             this.player.togglePlay();
         });
-
-        if (this.player.hasAttribute('controls')) return;
 
         this.player.addEventListener('play', () => {
             pauseButton.classList.remove('u-display--none');
